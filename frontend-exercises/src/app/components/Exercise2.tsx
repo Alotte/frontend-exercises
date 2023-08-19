@@ -1,3 +1,14 @@
+/*
+Exercise 2: TypeScript Typing
+
+Task: Create a TypeScript interface for a user object. The user object should have properties for a user's name (string), age (number), and email (string).
+
+Hints:
+
+Define an interface using interface keyword.
+Add properties with appropriate types to the interface.
+*/
+
 import React from 'react'
 const users: User[] = [
  {
