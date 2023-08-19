@@ -16,7 +16,7 @@ function CodelandUsernameValidation(str:string) {
     return USERNAME_PATTERN.test(str) + "";
   }
      
-const Exercise3 = () => {
+const Exercise4 = () => {
     const [input, setInput] = useState<string>("");
     const handleInputChange = (event:ChangeEvent<HTMLInputElement>) => {
         setInput(event.target.value);
@@ -30,7 +30,7 @@ const Exercise3 = () => {
   )
 }
 
-export default Exercise3
+export default Exercise4
 
 
 /*
