@@ -1,3 +1,19 @@
+.exercise_dark {
+  background: linear-gradient(0.45turn, #0f4f4f, var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 800;
+}
+
+.exercise_light {
+  background: #fff;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 800;
+}
+
 .gradient {
   background: linear-gradient(0.45turn, var(--primary), var(--accent)); /* Apply the gradient as the background */
   -webkit-background-clip: text; /* Webkit browsers */
