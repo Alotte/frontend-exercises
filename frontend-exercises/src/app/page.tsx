@@ -6,12 +6,24 @@ import { ThemeProvider } from './components/Exercise5/index';
 
 
 
+const Hero = () => {
+  return (
+    <div className={styles.hero}>  
+      <div>
+        <h1 className={styles.global_title}>Front-end <span className={styles.gradient}>Exercises</span></h1>
+        <em>By Alma Ottedag, <a className={styles.gradient} href='https://alotte.github.io/'>See portfolio</a></em> 
+      </div>
+      <img src='Alwyn.png' width="400px"/>
+    </div>
+
+  )
+}
+
 export default function Home() {
   return (
     <ThemeProvider>
       <main className={styles.main}>
-        <h1 className={styles.global_title}>Front-end <span className={styles.gradient}>Exercises</span></h1>
-        <em>By Alma Ottedag, <a className={styles.gradient} href='https://alotte.github.io/'>See portfolio</a></em> 
+        <Hero/>
         <Exercise5 />
         <Exercise4 />
         <Exercise2 />
