@@ -12,7 +12,7 @@ Implement an event handler for the button click that updates the counter state.
 
 
 import React, { useState } from 'react'
-
+import styles from '../page.module.css'
 
 //Simple counter increment exercise
 const Exercise1 = () => {
@@ -22,12 +22,13 @@ const Exercise1 = () => {
     }
 
     return (
-        <>
-        <div style = {{display : "flex", alignItems: 'center', justifyContent: 'space-between'}}>
-        <p style = {{marginRight: "1rem"}}>{currentValue}</p>
-        <button aria-label = 'Increment' style = {{padding: "1rem"}} onClick={handleClick}>Add some kazinga to that!</button>
-        </div>  
-        </>
+        <div className={styles.exercise_section}>
+            <h3 className={styles.exercise_title}>Exercise 1: React Components with hooks (useState) </h3>
+            <div className={styles.exercise_content}>
+                <p>{currentValue}</p>
+                <button aria-label = 'Increment' className={styles.button_primary} onClick={handleClick}>Add some kazinga to that!</button>
+            </div>  
+        </div>
     )
 }
 

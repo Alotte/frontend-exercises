@@ -1,4 +1,5 @@
 import React, { ChangeEvent, useState } from 'react'
+import styles from '../page.module.css'
 
 /*
 Have the function CodelandUsernameValidation(str) take the str parameter being passed and determine if the string is a valid username according to the following rules:
@@ -13,20 +14,41 @@ If the username is valid then your program should return the string true, otherw
 
 const USERNAME_PATTERN:RegExp = /^[A-Za-z][A-Za-z0-9_]{2,23}[A-Za-z0-9]$/; 
 function CodelandUsernameValidation(str:string) { 
-    return USERNAME_PATTERN.test(str) + "";
+    return USERNAME_PATTERN.test(str);
   }
      
 const Exercise3 = () => {
     const [input, setInput] = useState<string>("");
+    const [isValidTitle, setIsValidTitle] = useState<boolean>(true);
+
     const handleInputChange = (event:ChangeEvent<HTMLInputElement>) => {
-        setInput(event.target.value);
+        const newInput = event.target.value;
+        setInput(newInput);
+        setIsValidTitle(CodelandUsernameValidation(newInput));
     }
 
     return (
-    <div>
-        <p>Valid Username: {CodelandUsernameValidation(input)}</p>
-        <input onChange={handleInputChange}></input>
-    </div>
+      <div className={styles.exercise_section}>
+        <h3 className={styles.exercise_title}>Exercise 4: Form Validation -  Revisiting Regex</h3>
+        <i>Keep in mind Exercise 3 is a .html file so it's not included here.</i>
+    
+        <form className={styles.exercise3_form}>
+          <div className={styles.questionnaireTitle}>
+            <label className={styles.input__textfield_filled}>
+              <input
+                type="text"
+                value={input}
+                onChange={handleInputChange}
+                placeholder="Username"
+                className={styles.questionnaireTitle_form__control}
+              />
+              <span>Username</span>
+            </label>
+            {!isValidTitle ? <p className={styles.error}>Please enter a valid username</p> : <p className= {styles.invisible}>Please enter a valid username</p>}
+
+          </div>
+        </form>
+     </div>
   )
 }
 

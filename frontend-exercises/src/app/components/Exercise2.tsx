@@ -8,7 +8,7 @@ Hints:
 Define an interface using interface keyword.
 Add properties with appropriate types to the interface.
 */
-
+import styles from '../page.module.css'
 import React from 'react'
 const users: User[] = [
  {
@@ -36,22 +36,23 @@ interface User {
 
 
   const UserInfo = (user:User) => {
-  return (
-    <div>
-        <p> {user.name}</p>
-        <p> Age: {user.age}</p>
-        <p> Email: {user.email}</p>
-    </div>
-  )
-}
+    return (
+      <div>
+          <h4 className={styles.exercise4_username}> {user.name}</h4>
+          <p> Age: {user.age}</p>
+          <p> Email: {user.email}</p>
+      </div>
+    )
+  }
 
 const Exercise2 = () => {
-   
-  
   return (
-    <>
-      {users.map((user) => <UserInfo key= {user.email} {...user}/> )}  
-    </>
+    <div className={styles.exercise_section}>
+      <h3 className={styles.exercise_title}>Exercise 2: Basic Typescript Interfaces</h3>
+      <div className={styles.exercise_grid}>
+        {users.map((user) => <UserInfo key= {user.email} {...user}/> )}  
+      </div>
+    </div>
   )
 }
 
