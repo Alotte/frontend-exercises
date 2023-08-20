@@ -16,9 +16,15 @@ import styles from '../page.module.css'
 
 //Simple counter increment exercise
 const Exercise1 = () => {
+    const [toggle, setToggle] = useState<string>("ON");
     const [currentValue, setValue] = useState<number>(0);
     const handleClick = () => {
-        setValue(prevValue => prevValue + 1);
+        setValue(prevValue => prevValue + 1);   
+    }
+
+    const handleToggle = () => {
+        const newToggle:string = toggle === 'ON' ? 'OFF' : 'ON';
+        setToggle(prevToggle => newToggle); 
     }
 
     return (
@@ -28,6 +34,10 @@ const Exercise1 = () => {
                 <p>{currentValue}</p>
                 <button aria-label = 'Increment' className={styles.button_primary} onClick={handleClick}>Add some kazinga to that!</button>
             </div>  
+            <div className={styles.exercise_content}>
+                <p>A simple toggle button</p>
+                <button aria-label= 'Toggle' className = {styles.button_primary} onClick= {handleToggle}>{toggle}</button>                
+            </div>
         </div>
     )
 }
