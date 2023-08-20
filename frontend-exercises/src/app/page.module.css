@@ -126,7 +126,6 @@ Automatically generated CSS below.------------------------------------
 */
 .error  {
   color: var(--accent);
-  font-size: 13px;
   margin-top: 0.5rem;
   transition: opacity 0.3s ease;
 }
@@ -134,7 +133,6 @@ Automatically generated CSS below.------------------------------------
 .invisible {
   opacity:0;
   color: var(--accent);
-  font-size: 13px;
   transition: opacity 0.3s ease;
   margin-top: 0.5rem;
 }

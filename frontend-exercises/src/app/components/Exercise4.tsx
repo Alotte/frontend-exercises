@@ -16,6 +16,41 @@ const USERNAME_PATTERN:RegExp = /^[A-Za-z][A-Za-z0-9_]{2,23}[A-Za-z0-9]$/;
 function CodelandUsernameValidation(str:string) { 
     return USERNAME_PATTERN.test(str);
   }
+
+
+const ReverseString = () => {
+  const [input, setInput] = useState<string>("");
+  const [reversedInput, setReversedInput] = useState<string>("");
+  
+  const handleInputChange = (event:ChangeEvent<HTMLInputElement>) => {
+    const newInput = event.target.value;
+    setInput(newInput);
+    //Reverse string
+    let tempReversed:string = "";
+    for (let i:number = newInput.length -1; i >= 0; i--) {
+      tempReversed += newInput[i];
+    }
+    setReversedInput(tempReversed);
+  }
+
+  return (
+    <div className={styles.questionnaireTitle}>
+      <label className={styles.input__textfield_filled}>
+        <input
+          type="text"
+          value={input}
+          onChange={handleInputChange}
+          placeholder="Reverse text here"
+          className={styles.questionnaireTitle_form__control}
+        />
+        <span>Reverse this</span>
+      </label>
+      { input ? <h4 className={styles.error}>{reversedInput}</h4> : <h4 className={styles.invisible}>Yowzah!</h4>}
+    </div>
+
+  )
+
+}
      
 const Exercise3 = () => {
     const [input, setInput] = useState<string>("");
@@ -32,7 +67,6 @@ const Exercise3 = () => {
         <h3 className={styles.exercise_title}>Exercise 4: Form Validation -  Revisiting Regex</h3>
         <i>Keep in mind Exercise 3 is a .html file so it's not included here.</i>
     
-        <form className={styles.exercise3_form}>
           <div className={styles.questionnaireTitle}>
             <label className={styles.input__textfield_filled}>
               <input
@@ -45,9 +79,8 @@ const Exercise3 = () => {
               <span>Username</span>
             </label>
             {!isValidTitle ? <p className={styles.error}>Please enter a valid username</p> : <p className= {styles.invisible}>Please enter a valid username</p>}
-
           </div>
-        </form>
+          <ReverseString />
      </div>
   )
 }
