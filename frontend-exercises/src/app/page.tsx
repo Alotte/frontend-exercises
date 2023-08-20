@@ -3,6 +3,7 @@ import { useState } from 'react';
 import styles from './page.module.css'
 import { Exercise2, Exercise1, Exercise4, Exercise5 } from './components/index';
 import { ThemeProvider } from './components/Exercise5/index';
+import Exercise6 from './components/Exercise6';
 
 
 
@@ -24,6 +25,7 @@ export default function Home() {
     <ThemeProvider>
       <main className={styles.main}>
         <Hero/>
+        <Exercise6 />
         <Exercise5 />
         <Exercise4 />
         <Exercise2 />
