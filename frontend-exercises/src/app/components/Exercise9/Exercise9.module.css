@@ -1,0 +1,18 @@
+.pokemon_card {
+    display: flex;
+    margin: 1rem 0 1rem 0;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 1rem;
+    border: 2px solid #000;
+    border-radius: 3px;
+}
+
+.pokemon_grid {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(3, 1fr); /* Creates two equal-width columns */
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 2rem
+}

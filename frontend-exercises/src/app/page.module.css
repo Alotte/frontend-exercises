@@ -99,6 +99,7 @@
 }
 
 .button_primary {
+  margin-top: 1rem;
   font-family: var(--primary-font);
   cursor: pointer;
   display: inline-block;
